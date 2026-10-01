@@ -1,0 +1,260 @@
+[
+  {
+    "id": 1,
+    "name": "unique_stg_source_customers_customer_id",
+    "type": "generic unique",
+    "layer": "Source",
+    "rows_checked": 100,
+    "failures": 0,
+    "detail": "distinct_duplicated_keys=0",
+    "status": "PASS"
+  },
+  {
+    "id": 2,
+    "name": "not_null_stg_source_customers_customer_id",
+    "type": "generic not_null",
+    "layer": "Source",
+    "rows_checked": 100,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 3,
+    "name": "accepted_values_stg_source_customers_segment",
+    "type": "generic accepted_values",
+    "layer": "Source",
+    "rows_checked": 100,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 4,
+    "name": "unique_stg_source_products_product_id",
+    "type": "generic unique",
+    "layer": "Source",
+    "rows_checked": 20,
+    "failures": 0,
+    "detail": "distinct_duplicated_keys=0",
+    "status": "PASS"
+  },
+  {
+    "id": 5,
+    "name": "unique_stg_source_orders_order_id",
+    "type": "generic unique",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "distinct_duplicated_keys=0",
+    "status": "PASS"
+  },
+  {
+    "id": 6,
+    "name": "not_null_stg_source_orders_customer_id",
+    "type": "generic not_null",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 7,
+    "name": "relationships_stg_source_orders_customer_id",
+    "type": "generic relationships",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 8,
+    "name": "relationships_stg_source_orders_product_id",
+    "type": "generic relationships",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 9,
+    "name": "unique_stg_source_payments_payment_id",
+    "type": "generic unique",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "distinct_duplicated_keys=0",
+    "status": "PASS"
+  },
+  {
+    "id": 10,
+    "name": "accepted_values_stg_source_payments_payment_method",
+    "type": "generic accepted_values",
+    "layer": "Source",
+    "rows_checked": 500,
+    "failures": 0,
+    "detail": "",
+    "status": "PASS"
+  },
+  {
+    "id": 11,
+    "name": "unique_rpt_customers_customer_id",
+    "type": "generic unique",
+    "layer": "Report",
+    "rows_checked": 102,
+    "failures": 2,
+    "detail": "distinct_duplicated_keys=2",
+    "status": "FAIL"
+  },
+  {
+    "id": 12,
+    "name": "not_null_rpt_customers_customer_name",
+    "type": "generic not_null",
+    "layer": "Report",
+    "rows_checked": 102,
+    "failures": 3,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 13,
+    "name": "unique_rpt_products_product_id",
+    "type": "generic unique",
+    "layer": "Report",
+    "rows_checked": 21,
+    "failures": 1,
+    "detail": "distinct_duplicated_keys=1",
+    "status": "FAIL"
+  },
+  {
+    "id": 14,
+    "name": "not_null_rpt_products_category",
+    "type": "generic not_null",
+    "layer": "Report",
+    "rows_checked": 21,
+    "failures": 2,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 15,
+    "name": "unique_rpt_orders_order_id",
+    "type": "generic unique",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 4,
+    "detail": "distinct_duplicated_keys=4",
+    "status": "FAIL"
+  },
+  {
+    "id": 16,
+    "name": "not_null_rpt_orders_customer_id",
+    "type": "generic not_null",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 5,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 17,
+    "name": "relationships_rpt_orders_customer_id",
+    "type": "generic relationships",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 3,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 18,
+    "name": "relationships_rpt_orders_product_id",
+    "type": "generic relationships",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 2,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 19,
+    "name": "unique_rpt_payments_payment_id",
+    "type": "generic unique",
+    "layer": "Report",
+    "rows_checked": 502,
+    "failures": 2,
+    "detail": "distinct_duplicated_keys=2",
+    "status": "FAIL"
+  },
+  {
+    "id": 20,
+    "name": "not_null_rpt_payments_payment_amount",
+    "type": "generic not_null",
+    "layer": "Report",
+    "rows_checked": 502,
+    "failures": 3,
+    "detail": "",
+    "status": "FAIL"
+  },
+  {
+    "id": 21,
+    "name": "assert_report_orders_quantity_positive",
+    "type": "singular",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 4,
+    "detail": "quantity <= 0 or null",
+    "status": "FAIL"
+  },
+  {
+    "id": 22,
+    "name": "assert_report_orders_amount_nonnegative",
+    "type": "singular",
+    "layer": "Report",
+    "rows_checked": 504,
+    "failures": 3,
+    "detail": "order_amount < 0 or null",
+    "status": "FAIL"
+  },
+  {
+    "id": 23,
+    "name": "assert_report_payments_amount_positive",
+    "type": "singular",
+    "layer": "Report",
+    "rows_checked": 502,
+    "failures": 2,
+    "detail": "payment_amount <= 0 (non-null)",
+    "status": "FAIL"
+  },
+  {
+    "id": 24,
+    "name": "assert_reconciliation_orders_total_within_threshold",
+    "type": "singular reconciliation",
+    "layer": "Reconciliation",
+    "rows_checked": 1004,
+    "failures": 1,
+    "detail": "source_total=$655,327.30 report_total=$656,082.32 diff=$755.02 diff_pct=0.1152% threshold=0.01%",
+    "status": "FAIL",
+    "diff_pct": 0.11521265785814487,
+    "source_total": 655327.3,
+    "report_total": 656082.3200000001,
+    "diff": 755.0200000000186
+  },
+  {
+    "id": 25,
+    "name": "assert_reconciliation_payments_total_within_threshold",
+    "type": "singular reconciliation",
+    "layer": "Reconciliation",
+    "rows_checked": 1002,
+    "failures": 0,
+    "detail": "source_total=$655,327.30 report_total=$655,282.36 diff=$-44.94 diff_pct=0.0069% threshold=0.01%",
+    "status": "PASS",
+    "diff_pct": 0.00685764197523041,
+    "source_total": 655327.3,
+    "report_total": 655282.3600000001,
+    "diff": -44.93999999994412
+  }
+]

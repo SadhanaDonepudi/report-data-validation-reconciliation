@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "synthetic": true,
+  "source_rows": {
+    "source_customers": 100,
+    "source_products": 20,
+    "source_orders": 500,
+    "source_payments": 500
+  },
+  "defects": {
+    "report_customers_null_customer_name": 3,
+    "report_customers_duplicate_customer_id_extra_rows": 2,
+    "report_customers_duplicate_customer_id_distinct_keys": 2,
+    "report_products_null_category": 2,
+    "report_products_duplicate_product_id_extra_rows": 1,
+    "report_products_duplicate_product_id_distinct_keys": 1,
+    "report_orders_null_customer_id": 5,
+    "report_orders_orphan_customer_id": 3,
+    "report_orders_orphan_product_id": 2,
+    "report_orders_out_of_range_quantity_le_zero": 4,
+    "report_orders_negative_order_amount": 3,
+    "report_orders_drift_inflated_rows": 8,
+    "report_orders_drift_injected_amount": 800.0,
+    "report_orders_duplicate_order_id_extra_rows": 4,
+    "report_orders_duplicate_order_id_distinct_keys": 4,
+    "report_payments_null_payment_amount": 3,
+    "report_payments_orphan_order_id": 2,
+    "report_payments_negative_payment_amount": 2,
+    "report_payments_duplicate_payment_id_extra_rows": 2,
+    "report_payments_duplicate_payment_id_distinct_keys": 2
+  },
+  "report_rows": {
+    "report_customers": 102,
+    "report_products": 21,
+    "report_orders": 504,
+    "report_payments": 502
+  },
+  "reconciliation_ground_truth": {
+    "source_orders_total": 655327.3,
+    "report_orders_total": 656082.32,
+    "orders_diff": 755.02,
+    "orders_diff_pct": 0.115213,
+    "source_payments_total": 655327.3,
+    "report_payments_total": 655282.36,
+    "payments_diff": -44.94,
+    "payments_diff_pct": 0.006858,
+    "threshold_pct": 0.01
+  }
+}

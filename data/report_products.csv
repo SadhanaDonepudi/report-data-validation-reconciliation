@@ -1,0 +1,22 @@
+product_id,product_name,category,unit_price
+PROD-01,Product 01,Electronics,29.99
+PROD-02,Product 02,Furniture,49.99
+PROD-03,Product 03,Clothing,99.99
+PROD-04,Product 04,,199.99
+PROD-05,Product 05,Office Supplies,499.99
+PROD-06,Product 06,Electronics,19.99
+PROD-07,Product 07,Furniture,79.99
+PROD-08,Product 08,Clothing,149.99
+PROD-09,Product 09,Food,299.99
+PROD-10,Product 10,Office Supplies,999.99
+PROD-11,Product 11,Electronics,39.99
+PROD-12,Product 12,,59.99
+PROD-13,Product 13,Clothing,89.99
+PROD-14,Product 14,Food,129.99
+PROD-15,Product 15,Office Supplies,249.99
+PROD-16,Product 16,Electronics,399.99
+PROD-17,Product 17,Furniture,699.99
+PROD-18,Product 18,Clothing,24.99
+PROD-19,Product 19,Food,69.99
+PROD-20,Product 20,Office Supplies,179.99
+PROD-05,Product 05,Office Supplies,499.99

@@ -1,0 +1,107 @@
+version: 2
+
+sources:
+  - name: snowflake_source
+    description: "SYNTHETIC Snowflake-style source layer (CSV seeds)"
+    tables:
+      - name: source_customers
+      - name: source_products
+      - name: source_orders
+      - name: source_payments
+  - name: powerbi_report
+    description: "SYNTHETIC Power BI report layer (CSV seeds with injected defects)"
+    tables:
+      - name: report_customers
+      - name: report_products
+      - name: report_orders
+      - name: report_payments
+
+models:
+  - name: stg_source_customers
+    description: "SYNTHETIC staged Snowflake customers"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: segment
+        tests:
+          - accepted_values:
+              values: ['Retail', 'Corporate', 'Consumer']
+  - name: stg_source_products
+    description: "SYNTHETIC staged Snowflake products"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+  - name: stg_source_orders
+    description: "SYNTHETIC staged Snowflake orders"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_source_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('stg_source_products')
+              field: product_id
+  - name: stg_source_payments
+    description: "SYNTHETIC staged Snowflake payments"
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['Card', 'Bank Transfer', 'Cash', 'Digital Wallet']
+  - name: rpt_customers
+    description: "SYNTHETIC Power BI report customers"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+      - name: customer_name
+        tests:
+          - not_null
+  - name: rpt_products
+    description: "SYNTHETIC Power BI report products"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+      - name: category
+        tests:
+          - not_null
+  - name: rpt_orders
+    description: "SYNTHETIC Power BI report orders"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('rpt_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('rpt_products')
+              field: product_id
+  - name: rpt_payments
+    description: "SYNTHETIC Power BI report payments"
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+      - name: payment_amount
+        tests:
+          - not_null
